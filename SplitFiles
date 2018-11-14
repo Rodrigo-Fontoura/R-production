@@ -1,0 +1,16 @@
+splitFile <<- function(database, colSubset)
+{
+  dataList <- list(database)
+  for(i in 1:length(colSubset)){
+    temp <- list()
+    l <- 1
+    for(j in 1:length(dataList)){
+      for(k in 1:length(unique(dataList[[j]][,colSubset[i]]))){
+        temp[[l]] <- subset(dataList[[j]], dataList[[j]][,colSubset[i]]==unique(dataList[[j]][,colSubset[i]])[k])
+        l <- l+1
+      }
+    }
+    dataList <- temp
+  }
+  return(dataList)
+} 
