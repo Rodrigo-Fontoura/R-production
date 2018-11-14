@@ -1,3 +1,6 @@
+#Database is your data frame or matrix
+#colSubset is a vector which contains colums that will be used as filters
+
 splitFile <<- function(database, colSubset)
 {
   dataList <- list(database)
